@@ -1,4 +1,4 @@
 cajs
 ====
 
-Play Framework + CoffeScript + AngularJS + Jasmine + Scalate
+Play Framework + TwitterBootstrap + CoffeScript + AngularJS + Jasmine + Scalate
