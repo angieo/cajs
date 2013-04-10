@@ -1,0 +1,13 @@
+.container-fuild(ng-controller="SimpleCtrl")
+	.row-fluid
+		.span2
+			%h2 Menu
+			%ul.mymenu(ng-repeat="i in [0, 1, 2, 3, 4, 5]")
+				%li
+					Position {{i+1}}
+		.span10
+			%h2 Content 
+			%p {{"Hello " + "world"}}
+			%ul
+				%li(ng-repeat="item in items")
+					{{item.name}} : {{item.age}}
