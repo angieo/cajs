@@ -1,6 +1,9 @@
+- attributes("scripts") = capture
+	%script(src={uri("/assets/javascripts/controllers.js")} type="text/javascript")
+
 .container-fuild(ng-controller="SimpleCtrl")
 	.row-fluid
-		.span2
+		.span2.menupane
 			%h2 Menu
 			%ul.mymenu(ng-repeat="i in [0, 1, 2, 3, 4, 5]")
 				%li

@@ -9,6 +9,7 @@ GET     /renderWithTemplate         	controllers.Application.renderWithTemplate
 GET     /renderWithScalate          	controllers.Application.renderWithScalate
 GET     /renderWithScalateAndFormat     controllers.Application.renderWithScalateAndFormat
 GET     /renderSimpleLayout     		controllers.Application.renderSimpleLayout
+GET     /stepsCreator     				controllers.Application.stepsCreator
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

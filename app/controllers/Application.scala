@@ -24,5 +24,9 @@ object Application extends Controller {
   	def renderSimpleLayout = Action {
   		Ok(Scalate("simpleLayout").render('title -> "Scalate Simple Layout"))
   	}
+
+    def stepsCreator = Action {
+      Ok(Scalate("stepsCreator").render('title -> "Steps Creator"))
+    }
   
 }

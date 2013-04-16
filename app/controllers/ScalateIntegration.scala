@@ -1,10 +1,12 @@
 package controllers
 
 import play.api._
+import play.api.templates.{Html, HtmlFormat}
 import http.{Writeable, ContentTypeOf, ContentTypes}
 import mvc.Codec
 import play.api.Play.current
 import org.fusesource.scalate.layout.DefaultLayoutStrategy
+import java.io.File
 
 object Scalate {
 
@@ -16,9 +18,12 @@ object Scalate {
         case _ => "scaml"
     }
 
+    lazy val path = Play.application.path
+
     lazy val scalateEngine = {
         val engine = new TemplateEngine
         engine.resourceLoader = new FileResourceLoader(Some(Play.getFile("app/views")))
+        engine.sourceDirectories = new File(path, "app") :: Nil
         engine.layoutStrategy = new DefaultLayoutStrategy(engine, "app/views/layouts/default." + format)
         engine.classpath = "tmp/classes"
         engine.workingDirectory = Play.getFile("tmp")
@@ -30,6 +35,12 @@ object Scalate {
     def apply(template: String, myformat: String = format) = Template(template + "." + myformat)
 
     case class Template(name: String) {
+
+        //def render(args: Map[String, Any] = Map.empty): ScalateContent = {
+            //ScalateContent{
+                //scalateEngine.layout(name, args)
+            //}
+        //}
 
         def render(args: (Symbol, Any)*) = {
             ScalateContent{

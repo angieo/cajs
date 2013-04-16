@@ -1,2 +1,2 @@
 $ ->
-	$('.span2').append "Coffee Scripts works too!"
+	$('.menupane').append "Coffee Scripts works too!"

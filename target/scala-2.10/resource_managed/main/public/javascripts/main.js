@@ -1,3 +1,3 @@
 $(function() {
-  return $('.span2').append("Coffee Scripts works too!");
+  return $('.menupane').append("Coffee Scripts works too!");
 });

@@ -1,0 +1,30 @@
+- attributes("scripts") = capture
+	%script(src={uri("/assets/javascripts/myapp.js")} type="text/javascript")
+
+.span3
+	-render("submodules/menu.scaml")
+.span9
+	.row
+		.wizard(ng-controller="NewGameCtrl")
+			%form.form-horizontal
+				%ul.nav.nav-tabs
+					%li(ng-repeat="step in steps" ng-class="{active: $index==getCurrentStepIndex()}")
+						%a(title="Step" href="javascript:void(0);" ng-click="goToStep($index)") {{step}}
+				%div{"ng-switch on"=>"selection"}
+					%div(ng-switch-when="Start")
+						CREATING NEW GAME
+					%div(ng-switch-when="1")
+						Step 1
+					%div(ng-switch-when="2")
+						Step 2
+					%div(ng-switch-when="3")
+						Step 3
+					%div(ng-switch-when="Finish")
+						FINISH
+				.clearfix
+				%ul.pager.pull-right
+					%li(ng-class="{disabled: !hasPreviousStep()}")
+						%a(href="javascript:void(0);" ng-click="decrementStep()") &larr; Previous Step
+					%li(ng-class="{disabled: !hasNextStep()}")
+						%a(href="javascript:void(0);" ng-click="incrementStep()") Next Step &rarr;
+				.clearfix

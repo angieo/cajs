@@ -1,6 +1,6 @@
 var SimpleCtrl;
 SimpleCtrl = function($scope) {
-  return $scope.items = [
+  $scope.items = [
     {
       name: "Item1",
       age: 2
@@ -13,6 +13,18 @@ SimpleCtrl = function($scope) {
     }, {
       name: "Item4",
       age: 0
+    }
+  ];
+  return $scope.menuitems = [
+    {
+      name: "Page1",
+      href: "/"
+    }, {
+      name: "Page2",
+      href: "/"
+    }, {
+      name: "Page3",
+      href: "/"
     }
   ];
 };
