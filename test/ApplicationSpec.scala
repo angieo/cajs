@@ -29,5 +29,15 @@ class ApplicationSpec extends Specification {
         contentAsString(home) must contain ("Your new application is ready.")
       }
     }
+    
+    "render the stepsCreator page" in {
+      running(FakeApplication()) {
+        val home = route(FakeRequest(GET, "/stepsCreator")).get
+        
+        status(home) must equalTo(OK)
+        contentType(home) must beSome.which(_ == "text/html")
+        contentAsString(home) must contain ("LOGO")
+      }
+    }
   }
 }
